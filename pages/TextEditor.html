@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Editor</title>
+    <!-- font awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <!-- css bootstrap -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/TextEditor.css" type="text/css">
+    <!-- javascript -->
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <script src="../js/textEditorTools.js" defer></script>
+</head>
+    <body class="d-flex align-items-center justify-content-center">
+        <div class="containerOfAll w-100 h-100 p-2 container-fluid d-flex align-items-center justify-content-center">
+            <section class=" w-100 h-100 g-4 row">
+                <div class="textEditorContainer col-12 col-lg-6">
+                    <div class="textEditor w-100 h-100">
+                        <div class="editorTools p-2 d-flex flex-column w-100 bg-white">
+                            <div class="firstLineTools d-flex justify-content-between align-items-center p-1 w-100 h-50 ">
+                                <div class="vl h-75"></div>
+                                <button type="button" onclick="doUndo()" class="h-100">
+                                    <i class="fa-solid fa-rotate-left"></i>
+                                </button>
+                                <button type="button" onclick="doRedo()" class="h-100">
+                                    <i class="fa-solid fa-rotate-right"></i>
+                                </button>
+                                <div class="vl h-75"></div>
+                                <button type="button"  id="bold_button" class="h-100">
+                                    <i class="fa-sharp fa-solid fa-bold"></i>
+                                </button>
+                                <button type="button" id="italic_button" class="h-100">
+                                    <i class="fa-solid fa-italic"></i>
+                                </button>
+                                <button type="button" class="h-100" id="underline_button">
+                                    <i class="fa-solid fa-underline"></i>
+                                </button>
+                                <div class="vl h-75"></div>
+                                <button type="button" id="button_alignLeft" onclick="textLeft()" class="h-100">
+                                    <i class="fa-solid fa-align-left"></i>
+                                </button>
+                                <button type="button" id="button_alignCenter" onclick="textCenter()" class="h-100">
+                                    <i class="fa-solid fa-align-center"></i>
+                                </button>
+                                <button type="button" id="button_alignRight" onclick="textRight()" class="h-100">
+                                    <i class="fa-solid fa-align-right"></i>
+                                </button>
+                                <div class="vl h-75"></div>
+                                <button type="button" class="h-100" id="unorderedList_button">
+                                    <i class="fa-solid fa-list-ul"></i>
+                                </button>
+                                <button type="button" class="h-100" id="orderList_button">
+                                    <i class="fa-solid fa-list-ol"></i>
+                                </button>
+                                <div class="vl h-75"></div>
+                            </div>
+                            <div class="secondLineTools d-flex justify-content-start align-items-center p-1 w-100 h-50">
+                                <span class="d-flex justify-content-start align-items-center p-1">
+                                    <button id="txtSizeBtn" class="text-center" onclick="changeSize()">T</button>
+                                    <select id="txtSizeSelector">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3" selected>3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                    </select>
+                                </span>
+                                <span class="d-flex justify-content-start align-items-center p-1"><button id="txtColorBtn" class="text-center" onclick="changeColor()">A</button><input id="txtColorSelector" type="color" onchange="buttoncolorText()"/></span>
+                            </div>
+                        </div>
+                        <div class="textToEditContainer w-100 bg-white p-2">
+                            <iframe scrolling="auto" id="iframeTextEdit" spellcheck="false" class="textToEdit w-100 h-100">
+
+                            </iframe>
+                            <script type="text/template" id="iframeContent">
+                                <!DOCTYPE html>
+                                <html lang="en">
+                                <head>
+                                    <meta charset="UTF-8">
+                                    <style>  
+                                        #bodyEditor{
+                                            line-height: 18px;
+                                        }
+                                        ::-webkit-scrollbar {
+                                            height: 8px;
+                                            width: 8px;
+                                        }
+                                        ::-webkit-scrollbar-track {
+                                            background: #f1f1f1; 
+                                        }
+                                        ::-webkit-scrollbar-thumb {
+                                            background: #888; 
+                                        }
+                                    </style>
+                                    <title>Inner</title>
+                                </head>
+                                    <body id="bodyEditor" style="font-size:16px" class="edit-content-body" contenteditable="true" spellcheck="false">
+                                        <p><br></p><p style="text-align: center; "><font size="7" color="#0008ff"><u><b>WYSIWYG</b></u></font></p><p>A <b>WYSIWYG</b> is an editor that allows a developer to preview the end results before the actual interface or document is made live. The full form of <b>WYSIWYG</b> is <b>“<font color="#ff0000">what you see is what you get</font>”</b>. This type of software allows you to edit content in a form so that it looks same when displayed or printed.</p><ul><li>Easy</li><li>Fast</li><li>No special skills required.</li><li>You can make changes to content (text) in <b>WYSIWYG</b> editor, instead of searching for and inserting between <u><i><b>HTML</b></i></u> tags, or using a complex content management system.</li><li>Gives you more creative control as you get to focus more on what the design looks like instead of what the <u><i><b>HTML</b></i></u> code looks like.</li><li>Anyone can edit.</li></ul><p><br></p>
+                                    </body>
+                                </html>
+                            </script>
+                        </div>
+                    </div>
+                </div>
+                <div class="htmlGeneratorContainer col-12 col-lg-6">
+                    <div class="htmlGenerator w-100 h-100">
+                        <textarea readonly id="sourceCodeHTML" class="htmlCode w-100 h-100 bg-white p-2"></textarea>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </body>
+</html>
