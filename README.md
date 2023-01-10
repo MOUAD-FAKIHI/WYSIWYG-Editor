@@ -5,3 +5,20 @@ A WYSIWYG is an editor that allows a developer to preview the end results before
 ## Live Demo
 
 - **💻 https://mouad-fakihi.github.io/WYSIWYG-Editor/pages/TextEditor.html 💻**
+
+## Built With
+
+This project was built using these technologies.
+
+- JavaScript
+- HTML
+- CSS
+- Bootstrap
+
+## Authors ™️
+
+- [@FAKIHI Mouad](https://github.com/MOFA01)
+
+### Show your support
+
+Give a ⭐ if you like this website!
