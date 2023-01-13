@@ -1,97 +1,115 @@
 @charset "UTF-8";
 
-body{
-    height:100vh;
+body {
+  height: 100vh;
 }
-.containerOfAll{
-    background-color: #eeeeee;
+.containerOfAll {
+  background-color: #eeeeee;
 }
 .textEditor,
-#iframeTextEdit{
-    border: 1px solid black;
+#iframeTextEdit {
+  border: 1px solid black;
 }
-button{
-    background-color: rgb(238, 238, 238, 0.2);
-    width: 50px;
-    border: none;
-    /* border: #eeeeee 1px solid; */
+button {
+  background-color: rgb(238, 238, 238, 0.2);
+  width: 50px;
+  border: none;
+  /* border: #eeeeee 1px solid; */
 }
-.editorTools{
-    overflow-y: hidden;
-    overflow-x: auto;
+.editorTools {
+  overflow-y: hidden;
+  overflow-x: auto;
 }
 ::-webkit-scrollbar {
-    height: 8px;
-    width: 8px;
-  }
+  height: 8px;
+  width: 8px;
+}
 ::-webkit-scrollbar-track {
-    background: #f1f1f1; 
-  }
+  background: #f1f1f1;
+}
 ::-webkit-scrollbar-thumb {
-    background: #888; 
-  }
-button:hover{
-    background-color: #eeeeee;
+  background: #888;
+}
+button:hover {
+  background-color: #eeeeee;
 }
 .vl {
-    border-left: 2px solid black;
-  }
-#txtSizeSelector:focus{
-    outline: none;
-  }
-input[type="color"] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    width: 25px;
-    height: 25px;
-    background-color: transparent;
-    cursor: pointer;
-    border: none;
-    padding: 5px;
-  }
-  input[type="color"]::-webkit-color-swatch {
-    border: none;
-  }
-  input[type="color"]::-moz-color-swatch {
-    border-radius: 15px;
-    border: none;
-  }
+  border-left: 2px solid black;
+}
+#txtSizeSelector:focus {
+  outline: none;
+}
+input[type='color'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  padding: 5px;
+}
+input[type='color']::-webkit-color-swatch {
+  border: none;
+}
+input[type='color']::-moz-color-swatch {
+  border-radius: 15px;
+  border: none;
+}
 span {
-    border: #000000 solid 1px;
-    margin: 0 2px;
-    background-color: rgb(238, 238, 238, 0.2);
+  border: #000000 solid 1px;
+  margin: 0 2px;
+  background-color: rgb(238, 238, 238, 0.2);
 }
-span button{
-    background: none;
-    width: 25px;
-    height: 100%;
-    font-weight: 500;
-    font-size: 16px;
-    border: none;
+span button {
+  background: none;
+  width: 25px;
+  height: 100%;
+  font-weight: 500;
+  font-size: 16px;
+  border: none;
 }
-.active{
-    background-color: #373737;
-    color: #fff;
+.active {
+  background-color: #373737;
+  color: #fff;
 }
-#sourceCodeHTML{
-    outline: none;
-    resize: none;
-    border: solid 1px black;
+#sourceCodeHTML {
+  outline: none;
+  resize: none;
+  border: solid 1px black;
 }
-.textEditorContainer ,.htmlGeneratorContainer{
-    min-height: 400px;
+.textEditorContainer,
+.htmlGeneratorContainer {
+  min-height: 400px;
 }
-.editorTools{
-    height: 100px;
+.htmlGenerator {
+  position: relative;
+}
+.editorTools {
+  height: 100px;
 }
 
-.textToEditContainer{
-    height: calc(100% - 100px);
+.textToEditContainer {
+  height: calc(100% - 100px);
 }
 
-@media(max-width:992px){
-    body{
-        height: max-content;
-    }
+@media (max-width: 992px) {
+  body {
+    height: max-content;
+  }
+}
+
+.copyBtn {
+  width: 30px;
+  height: 30px;
+  color: #000000;
+  background-color: rgb(238, 238, 238);
+  border: #000000 1px solid;
+  position: absolute;
+  right: 0;
+}
+.copyBtn:hover {
+  background-color: #373737;
+  color: #eeeeee;
 }
