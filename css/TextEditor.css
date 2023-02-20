@@ -103,13 +103,33 @@ span button {
 .copyBtn {
   width: 30px;
   height: 30px;
-  color: #000000;
-  background-color: rgb(238, 238, 238);
+  background-color: #373737;
+  color: #eeeeee;
   border: #000000 1px solid;
   position: absolute;
   right: 0;
 }
 .copyBtn:hover {
+  background-color: #eeeeee;
+  color: #373737;
+}
+.textEditor{
+  position: relative;
+}
+.exportBtn{
+  width: 90px;
+  height: 30px;
   background-color: #373737;
   color: #eeeeee;
+  border: #000000 1px solid;
+  position: absolute;
+  border-bottom: none;
+  border-right: none;
+  font-weight: 600;
+  right: 0;
+  bottom: 0;
+}
+.exportBtn:hover{
+  background-color: #eeeeee;
+  color: #373737;
 }

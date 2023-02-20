@@ -15,6 +15,14 @@
     <link rel="stylesheet" href="../css/TextEditor.css" type="text/css" />
     <!-- javascript -->
     <script src="../js/textEditorTools.js" defer></script>
+    <script src="../js/jquery-3.6.1.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.js"
+      integrity="sha512-sn/GHTj+FCxK5wam7k9w4gPPm6zss4Zwl/X9wgrvGMFbnedR8lTUSLdsolDRBRzsX6N+YgG6OWyvn9qaFVXH9w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
   </head>
   <body class="d-flex align-items-center justify-content-center">
     <div
@@ -23,6 +31,13 @@
       <section class="w-100 h-100 g-4 row">
         <div class="textEditorContainer col-12 col-lg-6">
           <div class="textEditor w-100 h-100">
+            <button
+              id="exportPdf"
+              class="text-center exportBtn"
+              onclick="exportPdfFile()"
+            >
+              Export <i class="fa-solid fa-file-pdf"></i>
+            </button>
             <div class="editorTools p-2 d-flex flex-column w-100 bg-white">
               <div
                 class="firstLineTools d-flex justify-content-between align-items-center p-1 w-100 h-50"
@@ -147,7 +162,7 @@
                     <title>Inner</title>
                 </head>
                     <body id="bodyEditor" style="font-size:16px" class="edit-content-body" contenteditable="true" spellcheck="false">
-                        <p><br></p><p style="text-align: center; "><font size="7" color="#0008ff"><u><b>WYSIWYG</b></u></font></p><p>A <b>WYSIWYG</b> is an editor that allows a developer to preview the end results before the actual interface or document is made live. The full form of <b>WYSIWYG</b> is <b>“<font color="#ff0000">what you see is what you get</font>”</b>. This type of software allows you to edit content in a form so that it looks same when displayed or printed.</p><ul><li>Easy</li><li>Fast</li><li>No special skills required.</li><li>You can make changes to content (text) in <b>WYSIWYG</b> editor, instead of searching for and inserting between <u><i><b>HTML</b></i></u> tags, or using a complex content management system.</li><li>Gives you more creative control as you get to focus more on what the design looks like instead of what the <u><i><b>HTML</b></i></u> code looks like.</li><li>Anyone can edit.</li></ul><p><br></p>
+                        <p><br></p><p style="text-align: center; "><font size="7" color="#0008ff"><u><b>WYSIWYG</b></u></font></p><p><b>WYSIWYG</b> is an editor that allows a developer to preview the end results before the actual interface or document is made live. The full form of <b>WYSIWYG</b> is <b>“<font color="#ff0000">what you see is what you get</font>”</b>. This type of software allows you to edit content in a form so that it looks same when displayed or printed.</p><ul><li>Easy</li><li>Fast</li><li>No special skills required.</li><li>You can make changes to content (text) in <b>WYSIWYG</b> editor, instead of searching for and inserting between <u><i><b>HTML</b></i></u> tags, or using a complex content management system.</li><li>Gives you more creative control as you get to focus more on what the design looks like instead of what the <u><i><b>HTML</b></i></u> code looks like.</li><li>Anyone can edit.</li></ul><p><br></p>
                     </body>
                 </html>
               </script>

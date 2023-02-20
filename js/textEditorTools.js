@@ -382,3 +382,28 @@ function copyCodeSource() {
   document.execCommand('copy');
   document.getSelection().empty();
 }
+// export Pdf
+window.jsPDF = window.jspdf.jsPDF;
+function exportPdfFile() {
+  var doc = new jsPDF();
+  // Source HTMLElement or a string containing HTML.
+  var elementHTML = iframeBody;
+  // doc file name
+  let fileName = prompt('File name:');
+  if (fileName != null && fileName != '') {
+    doc.html(elementHTML, {
+      callback: function (doc) {
+        // Save the PDF
+        doc.save(`${fileName}.pdf`);
+      },
+      margin: [10, 10, 10, 10],
+      autoPaging: 'text',
+      x: 0,
+      y: 0,
+      width: 190, //target width in the PDF document
+      windowWidth: 675, //window width in CSS pixels
+    });
+  } else {
+    return;
+  }
+}
